@@ -37,7 +37,7 @@ function Auth() {
     setErrorMsg("");
 
     setSubmitButtonDisabled(true);
-    const res = await fetch("http://localhost:5000/user/signup", {
+    const res = await fetch("https://web-monitor-six.vercel.app/signup", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -82,7 +82,7 @@ function Auth() {
     setErrorMsg("");
 
     setSubmitButtonDisabled(true);
-    const res = await fetch("http://localhost:5000/user/login", {
+    const res = await fetch("https://web-monitor-six.vercel.app/login", {
       method: "POST",
       headers: {
         "content-type": "application/json",
