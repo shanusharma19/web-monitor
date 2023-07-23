@@ -16,7 +16,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/user", userRoutes);
+app.use(userRoutes);
 app.use(webRoutes);
 
 // const transport = nodemailer.createTransport({
