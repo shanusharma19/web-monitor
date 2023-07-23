@@ -77,7 +77,7 @@ cron.schedule("*/10 * * * * *", async () => {
 app.listen(5000, () => {
   console.log("Backend is up at port 5000");
   mongoose.set("strictQuery", true);
-  mongoose.connect(process.env.MONGO_URI, {
+  mongoose.connect("mongodb+srv://shanu04012003:123321@cluster0.qeb1dqf.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true, 
     useUnifiedTopology: true
   }).then(() => console.log('Connected to DB')).catch((e)=> console.log('Error', e))
