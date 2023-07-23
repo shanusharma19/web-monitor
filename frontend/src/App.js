@@ -28,7 +28,7 @@ function App() {
 
   const fetchAllWebsites = async () => {
     let token = localStorage.getItem("token");
-    const res = await fetch("https://web-monitor-backend.vercel.app/website", {
+    const res = await fetch("http://localhost:5000/website", {
       method: "GET",
       headers: {
         authorization: token,
@@ -48,7 +48,7 @@ function App() {
 
     let token = localStorage.getItem("token");
     setSubmitButtonDisabled(true);
-    const res = await fetch("https://web-monitor-backend.vercel.app/website", {
+    const res = await fetch("http://localhost:5000/website", {
       method: "POST",
       headers: {
         authorization: token,
@@ -80,7 +80,7 @@ function App() {
     let token = localStorage.getItem("token");
 
     setDeletingWebsite(id);
-    const res = await fetch(`https://web-monitor-backend.vercel.app/website/${id}`, {
+    const res = await fetch(`http://localhost:5000/website/${id}`, {
       method: "DELETE",
       headers: {
         authorization: token,
