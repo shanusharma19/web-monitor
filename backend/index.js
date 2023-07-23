@@ -27,6 +27,14 @@ app.use(webRoutes);
 //   },
 // });
 
+app.get("/", async (req, res) => {
+  try {
+    res.status(200).json({ message: "hello" });
+  } catch (err) {
+    res.status(400).json({ message: "Error", error: err });
+  }
+});
+
 const isSiteActive = async (url) => {
   if (!url) return false;
 
@@ -77,8 +85,14 @@ cron.schedule("*/10 * * * * *", async () => {
 app.listen(5000, () => {
   console.log("Backend is up at port 5000");
   mongoose.set("strictQuery", true);
-  mongoose.connect("mongodb+srv://shanu04012003:123321@cluster0.qeb1dqf.mongodb.net/?retryWrites=true&w=majority", {
-    useNewUrlParser: true, 
-    useUnifiedTopology: true
-  }).then(() => console.log('Connected to DB')).catch((e)=> console.log('Error', e))
+  mongoose
+    .connect(
+      "mongodb+srv://shanu04012003:123321@cluster0.qeb1dqf.mongodb.net/?retryWrites=true&w=majority",
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
+    )
+    .then(() => console.log("Connected to DB"))
+    .catch((e) => console.log("Error", e));
 });
