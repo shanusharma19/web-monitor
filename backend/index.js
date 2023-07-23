@@ -19,13 +19,13 @@ app.use(express.json());
 app.use(userRoutes);
 app.use(webRoutes);
 
-const transport = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.G_EMAIL,
-    pass: process.env.G_PASSWORD,
-  },
-});
+// const transport = nodemailer.createTransport({
+//   service: "gmail",
+//   auth: {
+//     user: process.env.G_EMAIL,
+//     pass: process.env.G_PASSWORD,
+//   },
+// });
 
 const isSiteActive = async (url) => {
   if (!url) return false;
